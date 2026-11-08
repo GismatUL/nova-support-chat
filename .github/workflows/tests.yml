@@ -20,8 +20,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { php: '8.2', laravel: '10.*', testbench: '8.*', nova: '4.*' }
-          - { php: '8.3', laravel: '12.*', testbench: '10.*', nova: '5.*' }
+          # Laravel 10 is end-of-life with unpatched advisories that Composer >= 2.9 blocks by default.
+          - { php: '8.2', laravel: '10.*', testbench: '8.*', nova: '4.*', eol: true }
+          - { php: '8.3', laravel: '12.*', testbench: '10.*', nova: '5.*', eol: false }
 
     name: PHP ${{ matrix.php }} / Laravel ${{ matrix.laravel }} / Nova ${{ matrix.nova }}
 
@@ -46,6 +47,8 @@ jobs:
 
       - name: Install dependencies
         if: env.NOVA_USERNAME != '' && env.NOVA_LICENSE_KEY != ''
+        env:
+          COMPOSER_NO_SECURITY_BLOCKING: ${{ matrix.eol && '1' || '' }}
         run: |
           composer config http-basic.nova.laravel.com "$NOVA_USERNAME" "$NOVA_LICENSE_KEY"
           # Until the core is on Packagist, resolve it straight from GitHub (needs a v1.x tag there).
