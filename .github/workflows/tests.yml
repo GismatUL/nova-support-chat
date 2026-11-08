@@ -1,0 +1,58 @@
+name: tests
+
+# Needs a Laravel Nova license. Add repository secrets NOVA_USERNAME (your nova.laravel.com email)
+# and NOVA_LICENSE_KEY. Without them the job is skipped, so forks and outside pull requests stay green.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { php: '8.2', laravel: '10.*', testbench: '8.*', nova: '4.*' }
+          - { php: '8.3', laravel: '12.*', testbench: '10.*', nova: '5.*' }
+
+    name: PHP ${{ matrix.php }} / Laravel ${{ matrix.laravel }} / Nova ${{ matrix.nova }}
+
+    env:
+      NOVA_USERNAME: ${{ secrets.NOVA_USERNAME }}
+      NOVA_LICENSE_KEY: ${{ secrets.NOVA_LICENSE_KEY }}
+
+    steps:
+      - name: Skip without Nova credentials
+        if: env.NOVA_USERNAME == '' || env.NOVA_LICENSE_KEY == ''
+        run: echo "::notice::NOVA_USERNAME / NOVA_LICENSE_KEY secrets are not set, skipping Nova tests."
+
+      - uses: actions/checkout@v4
+        if: env.NOVA_USERNAME != '' && env.NOVA_LICENSE_KEY != ''
+
+      - uses: shivammathur/setup-php@v2
+        if: env.NOVA_USERNAME != '' && env.NOVA_LICENSE_KEY != ''
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: pdo_sqlite, sqlite3, mbstring
+          coverage: none
+
+      - name: Install dependencies
+        if: env.NOVA_USERNAME != '' && env.NOVA_LICENSE_KEY != ''
+        run: |
+          composer config http-basic.nova.laravel.com "$NOVA_USERNAME" "$NOVA_LICENSE_KEY"
+          # Until the core is on Packagist, resolve it straight from GitHub (needs a v1.x tag there).
+          composer config repositories.core vcs https://github.com/GismatUL/laravel-support-chat
+          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" "laravel/nova:${{ matrix.nova }}" --no-interaction --no-update
+          composer update --prefer-dist --no-interaction --no-progress --with-all-dependencies
+
+      - name: Run tests
+        if: env.NOVA_USERNAME != '' && env.NOVA_LICENSE_KEY != ''
+        run: vendor/bin/phpunit

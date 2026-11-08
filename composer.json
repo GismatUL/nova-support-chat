@@ -1,0 +1,60 @@
+{
+    "name": "gmammadov/nova-support-chat",
+    "description": "Laravel Nova admin panel for gmammadov/laravel-support-chat: read, answer and close website chat conversations.",
+    "keywords": [
+        "laravel",
+        "nova",
+        "chat",
+        "live-chat",
+        "support",
+        "telegram"
+    ],
+    "homepage": "https://github.com/GismatUL/nova-support-chat",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gismat Mammadov",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "gmammadov/laravel-support-chat": "^1.0",
+        "laravel/nova": "^4.35|^5.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0|^9.0|^10.0|^11.0",
+        "phpunit/phpunit": "^10.0|^11.0|^12.0"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://nova.laravel.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Gmammadov\\NovaSupportChat\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Gmammadov\\NovaSupportChat\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Gmammadov\\NovaSupportChat\\NovaSupportChatServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

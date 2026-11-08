@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build && node -e \"require('fs').mkdirSync('dist/css',{recursive:true});require('fs').copyFileSync('resources/css/tool.css','dist/css/tool.css')\"",
+    "watch": "vite build --watch"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "5.2.1",
+    "vite": "5.4.11",
+    "vue": "3.5.13"
+  }
+}
