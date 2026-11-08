@@ -1,20 +1,20 @@
 # Nova Support Chat
 
-A [Laravel Nova](https://nova.laravel.com) panel for [gmammadov/laravel-support-chat](https://github.com/GismatUL/laravel-support-chat): read, answer and close website chat conversations from Nova. Answers appear in the customer's chat widget and are mirrored to your Telegram support group.
+A [Laravel Nova](https://nova.laravel.com) panel for [gismatul/laravel-support-chat](https://github.com/GismatUL/laravel-support-chat): read, answer and close website chat conversations from Nova. Answers appear in the customer's chat widget and are mirrored to your Telegram support group.
 
 Requires Nova 4.35+ or Nova 5, and PHP 8.2+.
 
 ## Installation
 
 ```bash
-composer require gmammadov/nova-support-chat
+composer require gismatul/nova-support-chat
 php artisan support-chat:install
 ```
 
 Then register the tool in `app/Providers/NovaServiceProvider.php`:
 
 ```php
-use Gmammadov\NovaSupportChat\SupportChatTool;
+use Gismatul\NovaSupportChat\SupportChatTool;
 
 public function tools()
 {
@@ -39,7 +39,7 @@ If you define your own `Nova::mainMenu()`, add the section yourself: `SupportCha
 By default, every user who can access Nova (your `viewNova` gate) can view, answer and manage support chats. To narrow it, add this to a service provider:
 
 ```php
-use Gmammadov\SupportChat\SupportChat;
+use Gismatul\SupportChat\SupportChat;
 
 SupportChat::authorizeUsing(fn ($user, string $ability) => match ($ability) {
     SupportChat::ABILITY_VIEW, SupportChat::ABILITY_REPLY => $user->hasRole('support') || $user->is_admin,
@@ -61,7 +61,7 @@ php artisan vendor:publish --tag=nova-support-chat-config
 
 | Key | Default | |
 |---|---|---|
-| `register_resource` | `true` | Set to `false` to register your own subclass of `Gmammadov\NovaSupportChat\Nova\Conversation` |
+| `register_resource` | `true` | Set to `false` to register your own subclass of `Gismatul\NovaSupportChat\Nova\Conversation` |
 | `disable_core_admin_routes` | `true` | See above |
 | `poll_interval` | `4` | Seconds between refreshes of an open conversation |
 | `pending_badge` | `true` | Menu badge with the number of waiting conversations |

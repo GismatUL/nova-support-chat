@@ -1,6 +1,6 @@
 {
-    "name": "gmammadov/nova-support-chat",
-    "description": "Laravel Nova admin panel for gmammadov/laravel-support-chat: read, answer and close website chat conversations.",
+    "name": "gismatul/nova-support-chat",
+    "description": "Laravel Nova admin panel for gismatul/laravel-support-chat: read, answer and close website chat conversations.",
     "keywords": [
         "laravel",
         "nova",
@@ -19,7 +19,7 @@
     ],
     "require": {
         "php": "^8.2",
-        "gmammadov/laravel-support-chat": "^1.0",
+        "gismatul/laravel-support-chat": "^1.2",
         "laravel/nova": "^4.35|^5.0"
     },
     "require-dev": {
@@ -34,12 +34,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "Gmammadov\\NovaSupportChat\\": "src/"
+            "Gismatul\\NovaSupportChat\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Gmammadov\\NovaSupportChat\\Tests\\": "tests/"
+            "Gismatul\\NovaSupportChat\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -48,7 +48,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Gmammadov\\NovaSupportChat\\NovaSupportChatServiceProvider"
+                "Gismatul\\NovaSupportChat\\NovaSupportChatServiceProvider"
             ]
         }
     },

@@ -1,9 +1,9 @@
 <?php
 
-namespace Gmammadov\NovaSupportChat\Nova\Actions;
+namespace Gismatul\NovaSupportChat\Nova\Actions;
 
-use Gmammadov\SupportChat\Models\Conversation;
-use Gmammadov\SupportChat\Services\ChatService;
+use Gismatul\SupportChat\Models\Conversation;
+use Gismatul\SupportChat\Services\ChatService;
 use Illuminate\Support\Collection;
 use Laravel\Nova\Actions\Action;
 use Laravel\Nova\Fields\ActionFields;

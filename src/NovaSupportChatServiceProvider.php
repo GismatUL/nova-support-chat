@@ -1,10 +1,10 @@
 <?php
 
-namespace Gmammadov\NovaSupportChat;
+namespace Gismatul\NovaSupportChat;
 
-use Gmammadov\NovaSupportChat\Http\Middleware\Authorize;
-use Gmammadov\NovaSupportChat\Nova\Conversation;
-use Gmammadov\SupportChat\SupportChat;
+use Gismatul\NovaSupportChat\Http\Middleware\Authorize;
+use Gismatul\NovaSupportChat\Nova\Conversation;
+use Gismatul\SupportChat\SupportChat;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Nova\Events\ServingNova;

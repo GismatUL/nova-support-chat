@@ -1,11 +1,11 @@
 <?php
 
-namespace Gmammadov\NovaSupportChat;
+namespace Gismatul\NovaSupportChat;
 
-use Gmammadov\NovaSupportChat\Nova\Conversation;
-use Gmammadov\SupportChat\Enums\ConversationStatus;
-use Gmammadov\SupportChat\Models\Conversation as ConversationModel;
-use Gmammadov\SupportChat\SupportChat;
+use Gismatul\NovaSupportChat\Nova\Conversation;
+use Gismatul\SupportChat\Enums\ConversationStatus;
+use Gismatul\SupportChat\Models\Conversation as ConversationModel;
+use Gismatul\SupportChat\SupportChat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Menu\MenuItem;

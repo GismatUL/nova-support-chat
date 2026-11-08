@@ -1,9 +1,9 @@
 <?php
 
-namespace Gmammadov\NovaSupportChat\Http\Middleware;
+namespace Gismatul\NovaSupportChat\Http\Middleware;
 
 use Closure;
-use Gmammadov\SupportChat\SupportChat;
+use Gismatul\SupportChat\SupportChat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use Symfony\Component\HttpFoundation\Response;

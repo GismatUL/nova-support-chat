@@ -3,7 +3,7 @@
 return [
 
     // Register the Conversation resource automatically. Disable it to register your own subclass
-    // of Gmammadov\NovaSupportChat\Nova\Conversation in NovaServiceProvider::resources().
+    // of Gismatul\NovaSupportChat\Nova\Conversation in NovaServiceProvider::resources().
     'register_resource' => true,
 
     // The core package's own admin API (/support-chat/admin, behind web + auth) is not needed with Nova:

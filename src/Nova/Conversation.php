@@ -1,13 +1,13 @@
 <?php
 
-namespace Gmammadov\NovaSupportChat\Nova;
+namespace Gismatul\NovaSupportChat\Nova;
 
-use Gmammadov\NovaSupportChat\ConversationThread;
-use Gmammadov\NovaSupportChat\Nova\Actions\CloseConversation;
-use Gmammadov\NovaSupportChat\Nova\Filters\ConversationStatusFilter;
-use Gmammadov\SupportChat\Enums\ConversationStatus;
-use Gmammadov\SupportChat\Models\Conversation as ConversationModel;
-use Gmammadov\SupportChat\SupportChat;
+use Gismatul\NovaSupportChat\ConversationThread;
+use Gismatul\NovaSupportChat\Nova\Actions\CloseConversation;
+use Gismatul\NovaSupportChat\Nova\Filters\ConversationStatusFilter;
+use Gismatul\SupportChat\Enums\ConversationStatus;
+use Gismatul\SupportChat\Models\Conversation as ConversationModel;
+use Gismatul\SupportChat\SupportChat;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Fields\Badge;
 use Laravel\Nova\Fields\DateTime;
@@ -124,6 +124,6 @@ class Conversation extends Resource
         ];
     }
 
-    // Authorization is enforced by Gmammadov\SupportChat\Policies\ConversationPolicy (registered by the
+    // Authorization is enforced by Gismatul\SupportChat\Policies\ConversationPolicy (registered by the
     // core package): Nova only enforces create/update/delete on the API when a policy exists.
 }

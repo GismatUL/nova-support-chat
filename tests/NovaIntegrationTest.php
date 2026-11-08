@@ -1,12 +1,12 @@
 <?php
 
-namespace Gmammadov\NovaSupportChat\Tests;
+namespace Gismatul\NovaSupportChat\Tests;
 
-use Gmammadov\NovaSupportChat\NovaSupportChatServiceProvider;
-use Gmammadov\NovaSupportChat\SupportChatTool;
-use Gmammadov\SupportChat\Models\Conversation;
-use Gmammadov\SupportChat\SupportChat;
-use Gmammadov\SupportChat\SupportChatServiceProvider;
+use Gismatul\NovaSupportChat\NovaSupportChatServiceProvider;
+use Gismatul\NovaSupportChat\SupportChatTool;
+use Gismatul\SupportChat\Models\Conversation;
+use Gismatul\SupportChat\SupportChat;
+use Gismatul\SupportChat\SupportChatServiceProvider;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Gate;

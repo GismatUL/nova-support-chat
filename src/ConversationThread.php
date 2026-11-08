@@ -1,6 +1,6 @@
 <?php
 
-namespace Gmammadov\NovaSupportChat;
+namespace Gismatul\NovaSupportChat;
 
 use Laravel\Nova\ResourceTool;
 

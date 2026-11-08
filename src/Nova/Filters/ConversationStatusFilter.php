@@ -1,8 +1,8 @@
 <?php
 
-namespace Gmammadov\NovaSupportChat\Nova\Filters;
+namespace Gismatul\NovaSupportChat\Nova\Filters;
 
-use Gmammadov\SupportChat\Enums\ConversationStatus;
+use Gismatul\SupportChat\Enums\ConversationStatus;
 use Laravel\Nova\Filters\Filter;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
