@@ -22,7 +22,7 @@ jobs:
         include:
           # Laravel 10 is end-of-life with unpatched advisories that Composer >= 2.9 blocks by default.
           - { php: '8.2', laravel: '10.*', testbench: '8.*', nova: '4.*', eol: true }
-          - { php: '8.3', laravel: '12.*', testbench: '10.*', nova: '5.*', eol: false }
+          - { php: '8.4', laravel: '12.*', testbench: '10.*', nova: '5.*', eol: false }
 
     name: PHP ${{ matrix.php }} / Laravel ${{ matrix.laravel }} / Nova ${{ matrix.nova }}
 

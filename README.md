@@ -2,7 +2,7 @@
 
 A [Laravel Nova](https://nova.laravel.com) panel for [gmammadov/laravel-support-chat](https://github.com/GismatUL/laravel-support-chat): read, answer and close website chat conversations from Nova. Answers appear in the customer's chat widget and are mirrored to your Telegram support group.
 
-Requires Nova 4.35+ or Nova 5, and PHP 8.1+.
+Requires Nova 4.35+ or Nova 5, and PHP 8.2+.
 
 ## Installation
 
